@@ -11,3 +11,15 @@ or run locally
 > gulp
 ```
 open http://localhost:3000/day-06 (or other day numbers) in browser
+
+# Codevember 2017
+
+Tasks for codevember 2017
+
+| Day   | Topic | Codepen Link|
+|:-----:|:-----:|:-------:|
+| **01** | :star::star: Galaxy | [Demo Galaxy](https://codepen.io/alicepopoff/pen/KZvbEZ) |
+| **02** | :cake: Cake | [Demo Cake](https://codepen.io/alicepopoff/pen/WdEjKa) |
+| **03** | :deciduous_tree: Tree | [Demo Tree](https://codepen.io/alicepopoff/pen/xpPVob) |
+| **06** | :umbrella: Storm | [Demo Storm](https://codepen.io/alicepopoff/pen/LeePQK) |
+| **14** | :cheese: Cheese | [Demo Cheese](https://codepen.io/alicepopoff/pen/ppdXjx) |
