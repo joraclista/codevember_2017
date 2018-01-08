@@ -1,48 +1,75 @@
 body {
-  position: absolute
-  top: 0 
-  left: 0
-  bottom: 0
-  right: 0
-  background: black
-  perspective: 600px
-  overflow: hidden
-}
-.star {
-  width: 0px
-  height: 0px
-  background: white
-  border-radius: 100%
-  position: absolute
-  top: 100px
-  left:100px
-  transition: all ease 2s
+	position: absolute
+	top: 0 
+	left: 0
+	bottom: 0
+	right: 0
+	background: #2b203d
+	//perspective: 600px
+	overflow: hidden
 }
 
-.star:after {
-    content: ""
-    opacity: 0
+@keyframes rotate {
+		0% {transform:rotate(0);}
+		50% {transform:rotate(180deg);}
+		100% {transform:rotate(360deg);}
+}
+
+.galaxy {
+    background: radial-gradient(#fce4ec 0%, #f48fb1 3%, #7e57c2 10%, #7e57c2 15%, #7e57c2 20%, #7e57c2 25%,transparent 55%)
     position: absolute
-    z-index: 1000
-    background: #fff
-    transition: all 2s ease-in-out
+    top: 0%
+    left: 30%
+    height: 60%
+    width: 80%
+    transform: rotate(20deg) scaleY(0.5)
 }
 
-.star-1:after{  
+.container {
+	position: absolute
+	top: 0 
+	left: 0
+	bottom: 0
+	right: 0
+	perspective: 600px
+	overflow: hidden
+	animation: rotate 100s infinite
+}
+
+.star {
+	width: 0px
+	height: 0px
+	background: white
+	border-radius: 100%
+	position: absolute
+	top: 100px
+	left:100px
+	transition: all ease 2s
+	&:after {
+		content: ""
+		opacity: 0
+		position: absolute
+		z-index: 1000
+		background: #fff
+		transition: all 2s ease-in-out		
+	}
+}
+
+.star-1:after {  
     width: 1px
     height: 1px
 }
-.star-2:after{  
-    width: 2px
-    height: 2px
-}
-.star-3:after{  
+.star-2:after {  
     width: 3px
     height: 3px
 }
-.star-4:after{  
+.star-3:after {  
     width: 4px
     height: 4px
+}
+.star-4:after {  
+    width: 5px
+    height: 5px
 }
 .start:after {
     opacity: 1

@@ -9,14 +9,12 @@ function stars(NUM_OF_STARS) {
     star.style.zIndex = getRandomInt(100, 110);
     star.style.opacity = 1 / getRandomInt(1, 10);
     var size = getRandomInt(1, 5);
-   // star.style.width = size + "px";
-    //star.style.height = size + "px";
     
-    document.body.appendChild(star);
-    var sleft = getRandomInt(0, 100);
-    var stop = getRandomInt(0, 100);
-    star.style.left = sleft + "%";
-    star.style.top = stop + "%";
+    document.getElementById("container").appendChild(star);
+    var star_left = getRandomInt(0, 100);
+    var star_top = getRandomInt(0, 100);
+    star.style.left = `${star_left}%`;
+    star.style.top = `${star_top}%`;
 
     var centerX = window.innerWidth / 2;
     var centerY = window.innerHeight / 2;
@@ -38,7 +36,7 @@ function stars(NUM_OF_STARS) {
 
 function removeDiv(div, timeout) {
   return setTimeout(function() {
-    document.body.removeChild(div);
+    document.getElementById("container").removeChild(div);
   }, timeout);
 }
 
