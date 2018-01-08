@@ -12,10 +12,9 @@ gulp.task('styles', function() {
   gulp.src('./src/**/*.stylus')
     .pipe(stylus())
 	.pipe(rename(function (path) {
-          //console.log("path = " + JSON.stringify(path))  
-		  path.dirname = "."
+		  path.dirname = path.dirname.replace("stylus", "css");
     }))
-    .pipe(gulp.dest('./public/css'))
+    .pipe(gulp.dest('./public/'))
 });
 
 gulp.task('copy-files', function() {
