@@ -1,0 +1,104 @@
+$cheese_side_bg = #ffca28
+$cheese_top_bg = #ffd54f
+$cheese_hole_bg = #ffa000
+$main_bg = #bbdefb
+
+body {
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	overflow: hidden
+	background: $main_bg
+}
+
+.container {
+	$size = 300
+	position: absolute
+	width: ($size)px
+	height: ($size)px
+	top: "calc(50% - %spx)" % ($size/2)
+	left: "calc(50% - %spx)" % ($size/2)
+}
+
+.cheese-side {
+	background: $cheese_side_bg
+	position: absolute
+	top: 83px
+	width: 300px
+	height: 135px
+	transform: skewY(-1deg)
+}
+
+.cheese-top {
+	width: 300px
+	height: 150px
+	border-radius: 100%
+	background: linear-gradient(-30deg, $cheese_top_bg 68%, transparent 40%) 0 0
+	background-repeat: no-repeat
+	background-size: 101% 65%
+	position: absolute
+}
+
+hole(width, height, top, left) {
+	width: width
+    height: height
+    top: top
+    left: left
+}
+
+
+.hole-1 {
+	hole(45px, 45px, 100px, 245px)
+}
+
+.hole-2 {
+	hole(30px, 30px, 163px, 217px)
+}
+
+.hole-3 {
+	hole(30px, 30px, 100px, 112px)
+}
+.hole-4 {
+	hole(40px, 40px, 120px, 45px)
+}
+.hole-5 {
+	hole(60px, 60px, 151px, 97px)
+}
+
+.hole-6 {
+	hole(60px, 27px, 55px, 78px)
+}
+
+.hole-7 {
+	hole(78px, 31px, 46px, 196px)
+}
+
+.hole-8 {
+	hole(50px, 50px, 156px, -20px)
+	box-shadow: 12px 0px 0px 4px rgba(73, 65, 0, 0.125)
+}
+
+.hole-9 {
+	hole(40px, 40px, 166px, 280px)
+	box-shadow: -13px 0px 0px -2px rgba(73, 65, 0, 0.125)
+}
+
+.hole-10 {
+	hole(40px, 30px, 13px, 80px)
+	box-shadow: 12px 4px 0px -2px rgba(73, 65, 0, 0.125)
+}
+
+.hole {
+	background: $cheese_hole_bg
+	border-radius: 100%
+	position: absolute
+	box-shadow: inset 1px 3px 0 4px rgba(73, 65, 0, 0.125)
+}
+
+.outside-hole {
+	border-radius: 100%
+	position: absolute
+	background: $main_bg
+}
