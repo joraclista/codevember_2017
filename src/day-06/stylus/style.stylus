@@ -1,0 +1,107 @@
+$material_bg = #546E7A
+$bg = #263238
+
+body {
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	margin: 0
+	overflow: hidden
+	background: $bg
+	animation: lighting 10s 5s infinite
+}
+.city {
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0%
+	background: $bg 
+	//-webkit-box-reflect: below 0 linear-gradient(transparent, white)
+
+}
+
+.bridge {
+    position: absolute
+    left: 0
+    right: 0
+    border-top: 5px solid $material_bg
+    border-bottom: 5px solid $material_bg
+    bottom: calc(10% - 5px)
+    height: 10%
+    z-index: 20
+    &:before, &:after {
+    content: ""
+    position: absolute
+    height: 100%;  
+    width:10%
+    top: 100%
+    background: $material_bg
+    box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.25)
+
+    }
+    &:before {
+        left: 10%
+     }
+    &:after { 
+        right: 10%
+    }
+}
+
+
+.bar {
+    left: 0px
+    width: 5px
+    bottom: 0
+    height: 100%
+    background: $material_bg
+    position: absolute
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5)
+}
+
+.light {
+    position: absolute
+    background: $material_bg
+    top: -300%
+    height: 400%
+    width: 5px
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5)
+  &:before, &:after {
+    content: ""
+    width: 10px
+    height: 10px
+    border-radius: 100%;
+    background: yellow
+    position: absolute
+    box-shadow: 0 0 49px 32px #ffffff4a
+    
+  }
+  &:before {
+    left: -10px
+  }
+  &:after {
+    right: -10px
+  }
+}
+
+.drop {
+	position: absolute
+	top: -10%
+	width:2px
+	height:10px;
+	background: $material_bg
+  
+}
+
+@keyframes fall {
+	0% {transform: translate(0, 0) rotate(30deg);opacity:1;}
+	100% {transform: translate(-200px, 1000px) rotate(30deg);opacity:0;}
+      
+}
+
+@keyframes lighting {
+	0% , 4%, 6%, 8%, 10%, 100% {filter: invert(0%)}
+	5%, 7%, 9% {filter: invert(100%)}
+}
