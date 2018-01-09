@@ -1,0 +1,93 @@
+$row_1_bg = #003459
+$row_w1_bg = #00A7E1
+$row_w2_bg = #006180
+$sun_bg = #FFFFFF
+$body_bg = #00171F
+$ground_bg = #007EA7
+
+random(min,max)
+  return floor(math(0, 'random')*(max - min + 1) + min)
+
+body {
+    position: absolute
+    margin: 0
+    top:0
+    left: 0
+    right 0
+    bottom: 0
+    overflow: hidden
+    background: $body_bg
+  }
+  
+.mountain {
+    position: absolute
+    transform-origin: top left 
+    box-shadow: 0 0 58px 4px #0000002e
+}
+
+.mountain-1 {
+    background: $row_w1_bg
+}
+.mountain-2 {
+    background: $row_w2_bg
+    z-index: -10
+}
+
+.mountain-main {
+	background: $row_1_bg
+    position: absolute
+    transform-origin: top left  
+    top: 15%
+    left: 50%
+    position: absolute
+    transform: rotate(45deg)
+    z-index: -30
+}
+
+$rt = 50%
+
+.ground {
+	position: absolute
+	top: $rt
+	left:0
+	right:0
+	bottom: 0
+	background: $ground_bg
+	z-index: 20
+}
+
+.sun {
+  $size = 30%
+    background: $sun_bg
+    position: relative
+    top: -10%
+    left: 27%
+    bottom: 0
+    width: 45%
+    height: auto
+    padding-top: 45%
+    border-radius: 100%
+    z-index: -100
+  
+}
+
+.row-1 {
+    position: absolute
+    top: $rt
+    height: 30%
+    left: 0
+    right: 0
+    display: flex
+    flex-direction: row
+}
+.bat {
+	position: absolute
+    top: 0
+    left: 55%
+    width: 150px
+    background: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Bat_icon.svg)
+    height: 100px
+    background-repeat: no-repeat
+    background-position: bottom center
+    background-size: contain
+}
