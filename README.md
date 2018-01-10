@@ -22,4 +22,7 @@ Tasks for codevember 2017
 | **02** | :cake: Cake | [Demo Cake](https://codepen.io/alicepopoff/pen/WdEjKa) |
 | **03** | :deciduous_tree: Tree | [Demo Tree](https://codepen.io/alicepopoff/pen/xpPVob) |
 | **06** | :umbrella: Storm | [Demo Storm](https://codepen.io/alicepopoff/pen/LeePQK) |
+| **11** | :bike: Bike | [Demo Bike](https://codepen.io/alicepopoff/pen/xpYGGW) |
 | **14** | :cheese: Cheese | [Demo Cheese](https://codepen.io/alicepopoff/pen/ppdXjx) |
+| **26** | :mountain: Mountain | [Demo Mountain](https://codepen.io/alicepopoff/pen/XVVmvd) |
+
