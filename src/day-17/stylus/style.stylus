@@ -1,0 +1,808 @@
+$main_bg = #AFD2E9
+$body_bg = #FFE0B2
+$grass_bg = #B1B695
+$material_bg_1 = #FCD0A1
+$material_bg_2 = #A690A4
+$material_bg_3 = #5E4B56
+$material_bg_4 = #c5a481
+$material_bg_5 = #B1B695
+
+body {
+  overflow: hidden
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  padding: 0
+  margin: 0
+  background: $main_bg
+}
+.cloud {
+    width: 350px;
+    height: 120px;
+    background: #ffffff;
+    border-radius: 100px
+    position: absolute
+    
+    &:before, &:after {
+      content: ''
+      position: absolute
+      background: #ffffff;
+      z-index: -1
+    }
+    &:before {
+      width: 180px
+      height: 180px
+      top: -90px
+      right: 50px
+      border-radius: 200px
+    }
+    &:after {
+      width: 100px
+    height: 100px
+    top: -50px
+    left: 50px
+    border-radius: 100px
+    }
+}
+.ground {
+   background: $grass_bg
+   height: 150px;
+   position: absolute
+   bottom: 0
+   left: 0
+   right: 0
+   z-index: 1
+   
+}
+.sky {
+   top: -1000%;
+   position: absolute
+   bottom: 0;
+   left: 0
+   right: 0
+   transition: all 5s;
+   
+}
+$bottom_pt = 80
+$bottom_pt_rod = 110
+.rod{
+    position: absolute;
+    border: 2px solid #90A4AE;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    bottom: "calc(%spx + 50px - 250px)" % ($bottom_pt_rod);
+    border-radius: 80%;
+    height: 500px;
+    left: 10%;
+    right: 10%;
+    z-index: 50;
+
+}
+
+@keyframes rod {
+  0%, 100% {
+      height: 500px;
+      bottom: "calc(%spx + 50px - 250px)" % ($bottom_pt_rod);
+    }
+
+  32%, 67% {
+      height: 1px;   
+      transform: scale(1);
+      bottom: "calc(%spx + 50px - 5px)" % ($bottom_pt_rod);
+    } 
+  33%, 66% {
+      height: 0;    
+       transform: scale(-1);
+      bottom: "calc(%spx + 50px)" % ($bottom_pt_rod);
+   } 
+   34%, 65% {
+      height: 1px;   
+      transform: scale(-1);
+      bottom: "calc(%spx + 50px - 5px)" % ($bottom_pt_rod)
+    } 
+    50% {
+      height: 200px;    
+      transform: scale(-1);
+      bottom: "calc(%spx + 50px - 100px)" % ($bottom_pt_rod)
+    }
+}
+
+
+.girl1 {
+    position: absolute
+    height: 204px
+    width: 50px
+    bottom: ($bottom_pt)px
+    left: 10%
+    z-index: 5
+}
+.girl2 {
+    position: absolute
+    height: 204px
+    width: 50px
+    bottom: ($bottom_pt)px
+    right: 10%
+    z-index: 5
+}
+.girl3 {
+    position: absolute
+    height: 204px
+    width: 50px
+    bottom: ($bottom_pt)px
+    left: calc(50% - 25px)
+    z-index: 5
+    
+}
+
+.girl1 .face {
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    background: $body_bg
+    position: absolute
+    z-index: 40
+    &:before {
+      content: ""
+      position: absolute
+      border-radius: 30%
+      z-index: 20
+      bottom: -10px
+      width: 8px
+      left: 17px
+      height: 20px
+      background: $body_bg
+      z-index: 40
+    }
+}
+.girl2 .face {
+    width: 50px
+    height: 50px
+    border-radius: 100%
+    background: $body_bg
+    position: absolute
+    &:before {
+      content: ""
+      position: absolute
+      border-radius: 30%
+      z-index: 20
+      bottom: -10px
+      width: 8px
+      right: 17px
+      height: 20px
+      background: $body_bg
+    }
+}
+
+.girl3 .face {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: $body_bg;
+    position: absolute;
+    &:before {
+    content: "";
+    position: absolute;
+    border-radius: 30%;
+    z-index: 20;
+    bottom: -10px;
+    width: 8px;
+    right: 17px;
+    height: 20px;
+    background: $body_bg;
+    }
+}
+
+.girl1 .hair {
+    width: 50px
+    height: 28px
+    border-radius: 42px 0px / 58px 0px
+    background: #A1887F
+    position: absolute
+    z-index: 50
+    &:after {
+      content: ""
+      width: 50px
+      height: 28px
+      border-radius: 42px 0px / 58px 0px
+      background: #A1887F
+      position: absolute
+      z-index: 10
+      left: -44px
+      top: 20px
+      transform-origin: top right
+      transform: rotate(-30deg)
+    }
+    &:before {
+      content: ""
+      position: absolute
+      border-radius: 30%
+      z-index: 20
+      bottom: -6px
+      width: 10px
+      height: 10px
+      background: $material_bg_3
+    }
+}
+
+.girl2 .hair-left {
+    width: 37px
+    height: 26px
+    border-radius: 42px 0px/58px 0px
+    background: #a1887f
+    position: absolute
+    left: 4px
+    top: 0px
+    z-index: 10
+    &:after {
+      content: ""
+      width: 16px
+      height: 48px
+      border-radius: 42px 0px/58px 0px
+      background: #a1887f
+      position: absolute
+      z-index: 10
+      left: -5px
+      top: 0px
+    }
+}
+
+.girl2 .hair-right {
+
+    &:after {
+      content: ""
+      width: 16px
+      height: 48px
+      background: #a1887f
+      border-radius: 0 42px /0 58px
+      position: absolute
+      z-index: 10
+      right: -4px
+      top: 0px
+    
+    }
+}
+
+.girl3 .hair-left {
+    width: 35px;
+    height: 28px;
+    border-radius: 42px 0px / 58px 0px;
+    background: $material_bg_3
+    position: absolute;
+    z-index: 10;
+    &:after {
+        content: "";
+        width: 50px;
+        height: 28px;
+        border-radius: 42px 0px/58px 0px;
+        background: $material_bg_3
+        position: absolute;
+        z-index: 10;
+        left: -37px;
+        top: 0px;
+        transform-origin: top right;
+        transform: rotate(115deg);
+    }
+    &:before {
+       content: "";
+        position: absolute;
+        border-radius: 30%;
+        z-index: 20;
+        top: 0;
+        left: 5px;
+        width: 11px;
+        height: 10px;
+        background: $material_bg_5
+    }
+}
+
+.girl3 .hair-right {
+       width: 35px;
+    height: 25px;
+    border-radius: 0px 32px/0px 40px;
+    background: $material_bg_3;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    &:after {
+              content: "";
+    width: 50px;
+    height: 28px;
+    border-radius: 42px 0px / 58px 0px;
+    background: $material_bg_3
+    position: absolute;
+    z-index: 10;
+    right: -27px;
+    top: -11px;
+    transform-origin: top left;
+    transform: rotate(-40deg);
+       
+    }
+    &:before {
+              content: "";
+    position: absolute;
+    border-radius: 30%;
+    z-index: 20;
+    top: 0;
+    right: 5px;
+    width: 11px;
+    height: 10px;
+    background: $material_bg_5
+    }
+}
+
+@keyframes jump {
+  0%, 100% {
+      transform: translate(0, 0);
+    }
+    50% {
+     transform: translate(0, -100px);
+    }
+}
+.girl1 .body {
+    width: 38px
+    height: 50px
+    background: $material_bg_2
+    position: absolute
+    top: 53px
+    left: 3px
+    z-index: 30
+    &:after {
+      content: "";
+      width: 36px;
+      position: absolute;
+      bottom: -48px;
+      left: -15px;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 50px solid $material_bg_2;
+    }
+}
+
+.girl2 .body {
+      width: 38px;
+    height: 50px;
+    //border-radius: 18%;
+    background: $material_bg_4;
+    position: absolute;
+    top: 53px;
+    left: 10px;
+    &:after {
+           content: "";
+    width: 25px;
+    height: 35px;
+    background: $material_bg_2;
+    position: absolute;
+    bottom: -35px;
+    }
+    &:before {
+           content: "";
+    width: 25px;
+    height: 35px;
+    background: $material_bg_2;
+    position: absolute;
+    bottom: -35px;
+    right:0;
+    }
+}
+
+.girl3 .body {
+    width: 38px
+    height: 50px
+    background: #F48FB1
+    position: absolute
+    top: 53px
+    left: 10px
+    &:after {
+      content: ""
+      width: 25px
+      height: 35px
+      background: $material_bg_5
+      position: absolute
+      bottom: -35px
+    }
+    &:before {
+      content: ""
+      width: 25px
+      height: 35px
+      background: $material_bg_5
+      position: absolute
+      bottom: -35px
+      right: 0
+    }
+}
+.girl1 .leg1 {
+    content: ""
+    position: absolute
+    z-index: 20
+    top: 151px
+    width: 8px
+    left: 8px
+    height: 42px
+    background: #ffe0b2
+     &:after {
+      content: ""
+      width: 26px
+      height: 15px
+      background: $material_bg_2
+      position: absolute
+      bottom: -10px
+      left: -4px
+      border-radius: 20px
+    }
+}
+
+.girl1 .leg2 {
+    content: ""
+    position: absolute
+    z-index: 20
+    top: 151px
+    width: 8px
+    left: 29px
+    height: 42px
+    background: #ffe0b2
+     &:after {
+      content: ""
+      width: 26px;
+      height: 15px
+      background: $material_bg_2
+      position: absolute
+      bottom: -10px
+      left: -4px
+      border-radius: 20px
+    }
+}
+
+
+.girl2 .leg1 {
+    content: ""
+    position: absolute
+    z-index: 20
+    top: 137px
+    width: 8px
+    left: 19px
+    height: 53px
+    background: #ffe0b2
+     &:after {
+        content: ""
+        width: 26px
+        height: 15px
+        background: $material_bg_3
+        position: absolute
+        bottom: -10px
+        left: -14px
+        border-radius: 20px
+    }
+}
+
+.girl2 .leg2 {
+    content: ""
+    position: absolute
+    z-index: 20
+    top: 137px
+    width: 8px
+    right: 7px
+    height: 53px
+    background: #ffe0b2
+     &:after {
+        content: ""
+        width: 26px
+        height: 15px
+        background: $material_bg_3
+        position: absolute
+        bottom: -10px
+        left: -4px
+        border-radius: 20px
+    }
+}
+
+
+.girl3 .leg1 {
+ 
+    position: absolute
+    z-index: 20
+    top: 137px
+    width: 8px
+    left: 19px
+    height: 53px
+    background: #ffe0b2
+     &:after {
+        content: ""
+        width: 26px
+        height: 15px
+        background: #f48fb1
+        position: absolute
+        bottom: -10px
+        left: -14px
+        border-radius: 20px
+    }
+}
+
+.girl3 .leg2 {
+    content: ""
+    position: absolute
+    z-index: 20
+    top: 137px
+    width: 8px
+    right: 7px
+    height: 53px
+    background: #ffe0b2
+    &:after {
+      content: ""
+      width: 26px
+      height: 15px
+      background: #f48fb1
+      position: absolute
+      bottom: -10px
+      left: -4px
+      border-radius: 20px
+       
+    }
+}
+
+
+.girl1 .face-detail {
+   
+    position: absolute
+    z-index: 50
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    border-bottom: 2px solid #FB8C00
+    top: 35px
+    left: 22px
+     &:after {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: 13px
+    }
+     &:before {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: -6px
+    }
+}
+.girl2 .face-detail {
+  
+    position: absolute
+    z-index: 50
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    border-bottom: 2px solid #FB8C00
+    top: 35px
+    left: 22px
+     &:after {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: 13px
+    }
+     &:before {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: -6px
+    }
+}
+
+.girl3 .face-detail {
+    
+    position: absolute
+    z-index: 50
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    border-bottom: 2px solid #FB8C00
+    top: 35px
+    left: 22px
+     &:after {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: 13px
+    }
+     &:before {
+        content: ""
+        width: 5px
+        height: 3px
+        background: #90A4AE
+        border-radius: 100%
+        position: absolute
+        top: -6px
+        left: -6px
+    }
+}
+.girl2 .hand1 {
+    position: absolute
+    z-index: 20
+    top: 52px
+    width: 8px
+    left: 9px
+    height: 63px
+    border-radius: 5px
+    background: #ffe0b2
+    transform-origin: top center
+    transform: rotate(13deg)
+}
+
+.girl2 .hand2 {
+      position: absolute;
+    z-index: 20;
+    top: 52px;
+    width: 8px;
+    right: 1px;
+    height: 63px;
+    border-radius: 5px;
+    background: #ffe0b2;
+    transform-origin: top center;
+    transform: rotate(-13deg);
+}
+
+.girl1 .hand1 {
+      position: absolute;
+    z-index: 20;
+    top: 52px;
+    width: 8px;
+    left: 3px;
+    height: 63px;
+    border-radius: 5px;
+    background: #ffe0b2;
+    transform-origin: top center;
+    transform: rotate(13deg);
+}
+.girl1 .hand2 {
+      position: absolute;
+    z-index: 20;
+    top: 52px;
+    width: 8px;
+    right: 6px;
+    height: 63px;
+    border-radius: 5px;
+    background: #ffe0b2;
+    transform-origin: top center;
+    transform: rotate(-13deg);
+}
+
+.girl3 .hand1 {
+    position: absolute
+    z-index: 20
+    top: 52px
+    width: 8px
+    left: 9px
+    height: 63px
+    border-radius: 5px
+    background: #ffe0b2
+    transform-origin: top center
+    transform: rotate(13deg)
+}
+
+.girl3 .hand2 {
+    position: absolute
+    z-index: 20
+    top: 52px
+    width: 8px
+    right: 1px
+    height: 63px
+    border-radius: 5px
+    background: #ffe0b2
+    transform-origin: top center
+    transform: rotate(-13deg)
+}
+.jump .rod {
+    animation: rod 1000ms infinite;
+}
+.jump .girl3 {
+  animation: jump 1000ms infinite;
+}
+.jump .girl3 .hair-right:after{
+  animation: hair2 1000ms infinite
+}
+.jump .girl3 .hair-left:after{
+  animation: hair1 1000ms infinite
+} 
+.jump .girl3 .hand1{
+  animation: hand1 1000ms infinite
+}
+.jump .girl3 .hand2{
+  animation: hand2 1000ms infinite
+} 
+
+
+//velocity
+.velocity .rod {
+    animation: rod 300ms infinite;
+}
+.velocity .girl3 {
+  animation: jump 300ms infinite;
+}
+.velocity .girl3 .hair-right:after{
+  animation: hair2 300ms infinite
+}
+.velocity .girl3 .hair-left:after{
+  animation: hair1 300ms infinite
+} 
+.velocity .girl3 .hand1{
+  animation: hand1 300ms infinite
+}
+.velocity .girl3 .hand2{
+  animation: hand2 300ms infinite
+} 
+
+//hit
+.hit .sky {
+  //animation: sky 2000ms forwards
+   bottom: -500% 
+  
+}
+.hit .girl3 {
+  //animation: jump 1000ms infinite;
+}
+.hit .girl3 .hand1{
+ transform: rotate(60deg); 
+}
+.hit .girl3 .hand2{
+  transform: rotate(-60deg); 
+} 
+.hit .girl3 .hair-right:after{
+ transform: rotate(0);
+}
+.hit .girl3 .hair-left:after{
+  transform: rotate(22deg);
+} 
+.hit .girl3 .leg1:after, .hit .girl3 .leg2:after{
+  transform: rotate(90deg);
+}
+
+@keyframes hand1 {
+  0%, 100% {  transform: rotate(13deg); }
+    50% {  transform: rotate(60deg); }
+  }
+    
+@keyframes hand2 {
+  0%, 100% {  transform: rotate(-13deg); }
+    50% { transform: rotate(-60deg);  }
+  }
+@keyframes leg {
+  0%, 100% { transform: rotate(0);  }
+    50% { transform: rotate(90deg);  }
+  }
+  
+  @keyframes hair1 {
+  0%, 100% { transform: rotate(115deg);  }
+    50% { transform: rotate(22deg); }
+  }
+    
+@keyframes hair2 {
+  0%, 100% { transform: rotate(-40deg) }
+    50% { transform: rotate(0deg) }
+  }
+ @keyframes sky {
+  0%, 100% {   bottom: 0 }
+    50% {   bottom: -500% }
+  } 
+
