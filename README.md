@@ -24,5 +24,6 @@ Tasks for codevember 2017
 | **06** | :umbrella: Storm | [Demo Storm](https://codepen.io/alicepopoff/pen/LeePQK) |
 | **11** | :bike: Bike | [Demo Bike](https://codepen.io/alicepopoff/pen/xpYGGW) |
 | **14** | :cheese: Cheese | [Demo Cheese](https://codepen.io/alicepopoff/pen/ppdXjx) |
+| **17** | :car: Speed | [Demo Speed](https://codepen.io/alicepopoff/pen/wpyOrq) |
 | **26** | :mountain: Mountain | [Demo Mountain](https://codepen.io/alicepopoff/pen/XVVmvd) |
 
