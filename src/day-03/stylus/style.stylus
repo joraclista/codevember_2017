@@ -1,0 +1,131 @@
+$color_dark_blue = #3D5A80
+$color_blue = #98C1D9
+$color_light_blue = #E0FBFC
+$color_red = #EE6C4D
+$color_dark = #293241
+$color_light_yellow = #fde8a2
+$car_lights_color = #ff9800
+$door_color = #795548
+
+random(min,max)
+  return floor(math(0, 'random')*(max - min + 1) + min)
+
+
+body {
+	overflow: hidden
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 0
+	margin: 0 
+	background: black
+}
+
+.buttons {
+    position: absolute
+    top: 0
+    width: 100%
+    display: flex
+    justify-content: center
+}
+
+.button {
+	cursor: pointer
+	color: #ffffff9e
+	text-align: center
+	border: 1px solid #ffffff24
+	border-radius: 5px
+	padding: 10px
+	margin: 5px
+}
+
+.garden {
+	background: $color_dark 
+	position: absolute
+	top: 0;
+	left: 0
+	right: 0
+	bottom: 0
+	display: flex
+	flex-direction: row 
+
+}
+.tree {
+    position: absolute
+    bottom: 0
+    width: 100%
+    background: url(https://upload.wikimedia.org/wikipedia/commons/6/61/P1010946-drawing_nevit_034.svg)
+    height: 10%
+    background-repeat: no-repeat
+    bottom: 0%
+    left: 110%
+    background-position: bottom center
+    background-size: contain
+}
+
+.leave {
+	position: absolute
+	background: white;
+	width: 0;
+	height: 0;
+	border-radius: 12% 30%
+	transform: rotate(7deg)
+	box-shadow: 0 0 5px #00000099
+}
+.spring .leave {
+	width: 10px
+	height: 10px
+}
+
+.leave-1 {
+	background: #698F3F
+}
+
+.leave-2 {
+	background: #1B5E20
+}
+
+.leave-3 {
+	background: #384d29
+}
+
+.autumn .leave-1 {
+	background: #c69648 
+}
+
+.autumn .leave-2 {
+	background: #BF360C 
+}
+
+.autumn .leave-3 {
+	background: #852e14 
+}
+
+$fall_strategies_num = 100
+for i in (1..$fall_strategies_num)
+    .fall .leave-fall-{i} {
+      animation: "fall-%s" % (i) (random(10, 30))s (random(1, 10))s ease-in-out forwards
+    }
+    
+for i in (1..$fall_strategies_num)
+    @keyframes fall-{i} {
+      10% {transform:translate(-(random(10, 30))px, 50px) skewY(0); opacity:1; }
+      20% {transform:translate((random(10, 30))px, 70px) skewY(45deg); }
+      30% {transform:translate(-(random(10, 30))px, 120px) skewY(0deg); }
+      50% {transform:translate((random(10, 30))px, 200px) skewY(45deg); }
+      80% {transform:translate(-(random(10, 30))px, 250px) skewY(0deg); }
+      100% {transform:translate((random(10, 30))px, 350px); opacity:0; }
+    }
+    
+
+for i in (1..20)
+    .tree-{i} {
+        transition: all ease-in-out (random(5, 50))s
+    }
+    
+.winter .tree {
+   filter: invert(100%)
+}
+
