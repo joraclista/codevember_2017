@@ -1,0 +1,142 @@
+$main_bg = #90CAF9
+$car_bg = #f06292
+$bg_ocean = #64B5F6
+
+body {
+	overflow: hidden
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	margin: 0
+	background: $main_bg
+}
+
+.cloud {
+    width: 350px
+    height: 120px
+    background: #ffffff
+    border-radius: 100px
+    position: absolute
+    z-index: -50
+    box-shadow: 0 0 45px 10px #00000029
+    
+    &:before, &:after {
+      content: ''
+      position: absolute
+      background: #ffffff
+      z-index: -1
+    }
+    &:before {
+      width: 180px
+      height: 180px
+      top: -90px
+      right: 50px
+      border-radius: 200px
+    }
+    &:after {
+      width: 100px
+      height: 100px
+      top: -50px
+      left: 50px
+      border-radius: 100px
+    }
+}
+.ocean {
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	height: 70%
+	background: $bg_ocean
+	//z-index: -40
+}
+.fish-container {
+  position: absolute
+	width: 100px
+	height: 100px
+}
+.fish {
+	position: absolute
+	width: 100px
+	height: 100px
+	background: #fff
+	border-radius: 70px 10px / 70px 10px
+	transform: rotate(45deg)
+
+}
+
+.fish-eyes {
+    position: absolute
+    width: 15px
+    height: 15px
+    top: 11%
+    left: 57%
+    background: #607D8B
+    border-radius: 100%
+}
+
+.fish-tail {
+	position: absolute
+	width: 100%
+	height: 100%
+	
+	&:before, &:after {
+	content: ""
+	position: absolute
+	width: 50%
+	height: 50%
+	top: 100%
+	left: -50%
+	border-radius: 70% 0%
+	background: gainsboro
+	transform-origin: top right
+  }
+  &:before {
+    transform: rotate(-22deg)
+  }
+  &:after {
+    transform: rotate(22deg)
+  }
+}
+
+.fish, .fish-tail:before, .fish-tail:after {
+	box-shadow: 8px 3px 17px 6px #0d47a130
+}
+.fish-1, .fish-1 .fish-tail:before, .fish-1 .fish-tail:after {
+	background: #FFEB3B
+}
+
+.fish-2, .fish-2 .fish-tail:before, .fish-2 .fish-tail:after {
+	background: #f48fb1
+}
+
+.fish-3, .fish-3 .fish-tail:before, .fish-3 .fish-tail:after {
+	background: #ef9a9a
+}
+
+.fish-4, .fish-4 .fish-tail:before, .fish-4 .fish-tail:after {
+	background: #F48FB1
+}
+
+.fish-5, .fish-5 .fish-tail:before, .fish-5 .fish-tail:after {
+	background: #A5D6A7
+}
+
+
+
+@keyframes swim {
+	0% {left:-30%; transform: translate(0,50px);}
+	10% {left:20%; transform: translate(0,-50px);}
+	20% {left:40%; transform: translate(0,50px);}
+	30% {left:60%; transform: translate(0,-50px);}
+	40% {left:80%; transform: translate(0,50px);}
+	45% {left:100%; transform: translate(0,-50px);}
+	50% {left:130%; transform:translate(0,50px) scaleX(-1);}
+	60% {left:90%; transform: translate(0,-50px) scaleX(-1);}
+	70% {left:60%; transform: translate(0,50px) scaleX(-1);}
+	80% {left:20%; transform: translate(0,-50px) scaleX(-1);}
+	90% {left:-10%; transform: translate(0,50px) scaleX(-1);}
+	100% {left:-30%; transform: translate(0,0) scaleX(1);}
+}
