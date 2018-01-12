@@ -1,0 +1,85 @@
+$color_brown_dark = #2C1A1D
+$color_brown_light = #6C534E
+$color_pink = #A67F8E
+$color_peach = #C89FA3
+$color_chestnut =#DBB3B1
+
+body {
+	overflow: hidden
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	margin: 0
+	background: $color_brown_dark
+}
+
+.planet-top {
+	$size = 250
+	position: absolute
+	top: "106px" % ($size/2)
+	right: "170px" % ($size/2)
+	width: ($size)px
+	height: ($size)px
+	border-radius: 100%
+	background: radial-gradient( circle at top center, $color_chestnut, $color_pink 15%, $color_brown_light, $color_chestnut, $color_brown_light, $color_pink )
+	z-index: 50
+	clip: rect(0px,250px,150px,0px);
+}
+.planet-btm {
+	$size = 250
+	position: absolute
+	top: "106px" % ($size/2)
+	right: "170px" % ($size/2)
+	width: ($size)px
+	height: ($size)px
+	border-radius: 100%
+	background: radial-gradient( circle at top center, $color_chestnut, $color_pink 15%, $color_brown_light, $color_chestnut, $color_brown_light, $color_pink )
+	z-index: -50
+	clip: rect(120px,250px,250px,0px)
+}
+.circle {
+	$size = 500
+	position: absolute
+	top: 0
+	right: 50px
+	width: ($size)px
+	height: ($size)px
+	border-radius: 100%
+	background: radial-gradient(circle at center center, transparent 40%,  $color_pink, $color_peach, $color_brown_dark, $color_pink, transparent, transparent 80%)
+	transform: rotate3d(1,0,0,70deg)
+}
+
+
+.comet {
+	position: absolute
+	top: 100px
+	left: 100px
+	transform-origin: top left
+	transform: rotate(-45deg)
+	background: white
+	background: linear-gradient(to bottom, transparent, white 500%)
+	height:200px
+	width: 1px
+	opacity:0
+
+}
+.comet:after {
+	position: absolute
+	top:100%
+	right: 0
+	width: 5px
+	height: 5px
+	border-radius: 100%
+	content: ""
+	background:white
+}
+
+
+@keyframes comet {
+	0% {height:0;opacity:0}
+	50% {height:100px;opacity:1}
+	100% {height:200px;opacity:0}
+}
+

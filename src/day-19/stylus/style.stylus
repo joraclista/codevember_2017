@@ -121,7 +121,8 @@ body {
 }
 
 .fish-5, .fish-5 .fish-tail:before, .fish-5 .fish-tail:after {
-	background: #A5D6A7
+	background: radial-gradient( circle at top center, yellow, #f06d06, red, blue, red, blue, red, blue,#E91E63, blue)
+    background-position: 60px
 }
 
 
