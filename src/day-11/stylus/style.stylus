@@ -1,0 +1,411 @@
+$main_bg = #D3D5D4
+$bike_material_1 = #878E99
+$bike_material_2 = #607D8B
+$bg_ground = #A2C5AC
+
+body {
+	overflow: hidden
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	margin: 0
+	background: $main_bg
+}
+
+.bike-container {
+	position: absolute
+	width: 150px
+	height: 80px
+	left: 50%
+	bottom: 20%
+}
+
+$size = 100
+.wheel {
+	width: ($size)px
+	height: ($size)px
+	border-radius: 100%
+	border: 6px solid $bike_material_2
+	position: absolute
+	box-shadow: 0 0 5px 2px #000000a1
+	animation: wheel 100s infinite
+}
+.wheel-1 {
+	bottom: -($size/2)px
+	left: -($size/2)px
+}
+.wheel-2 {
+	bottom: -($size/2)px
+	right: -($size/2)px
+}
+
+.bar {
+	position: absolute
+	width: 3px
+	height: 100%
+	background: $bike_material_1
+	left: calc(50% - 5px/2)
+	box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.17)
+}
+
+.rama, .rama:after {
+	box-shadow: 0 0 0px 1px rgba(29, 31, 32, 0.46)
+	border-color: $bike_material_1
+	border-width: 5px
+	border-style: solid
+	position: absolute
+}
+
+.rama1 {    
+    border-top: none
+    border-right: none
+    border-left: none
+    bottom: 0
+    left: 0
+    right: 30%
+}
+
+.rama2 {
+    border-top: none
+    border-right: none
+    border-left: none
+    top: 0
+    left: 25%
+    right: 29px
+}
+
+.rama1:after {
+    content: ""
+    border-top: none
+    border-bottom: none
+    border-left: none
+    height: 81px
+    bottom: 0
+    transform-origin: bottom left
+    transform: rotate(28deg)
+}
+
+.rama2:after {
+    content: ""
+    border-top: none
+    border-bottom: none
+    border-left: none
+    height: 84px
+    right: 0
+    top: 0
+    transform-origin: top right
+    transform: rotate(13deg)
+}
+
+.rama3 { 
+    $size = 25
+    border-color: #546e7a
+    width: ($size)px
+    height: ($size)px
+    background: #546E7A
+    border-radius: 100%
+    bottom: "calc(-%spx / 2)" % ($size)
+    right: "calc(30% - %spx / 2)" % ($size)
+    &:before, &:after {
+		content: ""
+		position: absolute
+		top: -6px
+		right: 50%
+		width: 97px
+		border: 2px solid #546E7A
+		transform-origin: top right
+		box-shadow: none
+	}
+    &:after {
+		transform: rotate(-9deg)
+    }
+    &:before {
+		transform: rotate(9deg)
+    }
+}
+
+.rama4 {
+    right: 30%
+    bottom: 0
+    height: 120px
+    transform: rotate(-40deg)
+    transform-origin: bottom right
+    border: 3px solid $bike_material_1
+}
+
+.rama5 {    
+    border-top: none
+    border-right: none
+    border-bottom: none
+    bottom: 0
+    right: 0
+    height: 108px
+    transform-origin: bottom right
+    transform: rotate(-18deg)
+}
+
+.rama5:after {  
+    content: ""
+    border-left: none
+    border-right: none
+    border-bottom: none
+    top: 0
+    left: -30px
+    width: 60px
+}
+
+.ground {
+	position: absolute
+	bottom: 0
+	left:0
+	right: -1000%
+	height: 30%
+	background: $bg_ground
+}
+
+.city {
+	position: absolute
+	bottom: 30%
+	left:0
+	right: -1000%
+	top: 0
+	border-bottom: #9DB5B2 20px solid
+	animation: start 100s infinite
+}
+
+@keyframes start {
+  0% {left: 0}
+  100% {left: -900%}
+}
+
+@keyframes wheel {
+  0% {transform:rotate(0)}
+  100% {transform:rotate(36000deg)}
+}
+
+.office {
+	position: absolute
+	bottom: 0
+	box-shadow: 0 0 30px 3px #00000026
+}
+
+.office-1 {
+	background : #9DB5B2
+}
+.office-2 {
+	background : #878E99
+	z-index : -10
+}
+.mountain {
+	position: absolute
+	bottom: 0
+	transform: rotate(45deg)
+	transform-origin: bottom left
+	box-shadow: 0 0 30px 3px #00000026
+}
+.mountain-1 {
+	background : #7d9584
+	z-index: -10
+}
+.mountain-2 {
+	background : #7F6A93
+	z-index : -20
+}
+
+.girl-face {
+	background: #FFCC80
+	width: 45px
+	height: 45px
+	border-radius: 100%
+	position: absolute
+	top: -129px
+	right: 60px
+}
+
+.girl-hair {
+    background: #a1887f
+    width: 35px
+    height: 49px
+    border-radius: 72px 17px/67px 0px
+    position: absolute
+    top: -136px
+    left: 46px
+    transform: rotate(33deg)
+    z-index: 80
+}
+.girl-hair:after {
+    content: ""
+    background: #a1887f
+    width: 45px
+    height: 45px
+    border-radius: 72px 0px/67px 0px
+    position: absolute
+    top: 45px
+    left: -43px
+    transform-origin: top right
+    transform: rotate(33deg)//up to -43
+    animation: hair 5s ease-in-out infinite
+}
+.girl-hair:before {
+    content: ""
+    background: #f48fb1
+    width: 13px
+    height: 13px
+    border-radius: 72px 17px/67px 0px
+    position: absolute
+    bottom: -5px
+    left: -5px
+    z-index: 80
+}
+
+@keyframes hair {
+  0% , 100%{    transform: rotate(33deg);}
+  50% {    transform: rotate(-43deg);}
+  
+}
+
+.girl-body {
+    background: #F48FB1
+    width: 38px;
+    height: 97px
+    border-radius: 27px
+    position: absolute
+    bottom: 100%
+    left: -10px
+    transform-origin: bottom center
+    transform: rotate(30deg)
+    z-index: 40
+}
+//neck
+.girl-body:after {
+	content: ""
+	background: #ffcc80
+	position: absolute
+	bottom: 100%
+	left: 12px
+	width: 7px
+	height: 18px
+	z-index: 50
+	top: -10px
+}
+
+.girl-hands {
+    width: 28px
+    height: 85px
+    position: absolute
+    bottom: 95px
+    right: 13px
+    transform-origin: bottom center
+    transform: rotate(-46deg)
+    z-index: 40
+	
+	&:before, &:after {
+		content: ""
+		background: #ffcc80
+		position: absolute
+		bottom: 0
+		width: 8px
+		height: 100%
+		border-radius: 10px
+	}
+	&:after {
+		left: -8px
+		top: -13px
+		z-index: 40
+	}
+
+	&:before {
+		left: 16px
+		top: -3px
+		transform: rotate(-6deg)
+		z-index: -10
+	}
+}
+
+
+
+.girl-leg1 {
+	background: #d57e9b
+	position: absolute
+	top: -16px
+	left: 0
+	width: 25px
+	border-radius: 10px
+	height: 89px
+	transform-origin: top center
+	transform: rotate(-50deg)
+	z-index: 50
+	animation: leg-up1 5s  infinite
+}
+
+.girl-leg1:after {
+	content: ""
+	background: #d57e9b
+	position: absolute
+	left: 5px
+	width: 25px
+	height: 74px
+	border-radius: 10px
+	bottom: 13px
+	transform-origin: bottom center
+	transform: rotate(-155deg)
+	z-index: 50
+	animation: leg-down1 5s  infinite
+}
+
+.girl-leg2 {
+    background: #bf738c
+    position: absolute
+    top: -16px
+    left: 0
+    width: 25px
+    border-radius: 10px
+    height: 89px
+    transform-origin: top center
+    transform: rotate(-87deg)
+    animation: leg-up2 5s infinite
+
+}
+
+
+.girl-leg2:after{
+    content: ""
+    background: #bf738c
+    position: absolute
+    left: 5px
+    width: 25px
+    height: 74px
+    border-radius: 10px
+    bottom: 13px
+    transform-origin: bottom center
+    transform: rotate(-96deg)
+    animation: leg-down2 5s infinite
+
+}
+
+@keyframes leg-up1{
+  0%, 100% {transform: rotate(-65deg)}
+  10% {transform: rotate(-60deg)}
+  43% {transform: rotate(-45deg)}
+  76% {transform: rotate(-75deg)}
+      
+}
+@keyframes leg-down1{
+   0%, 100% {transform: rotate(-155deg)}
+  50% {transform: rotate(-95deg)}
+      
+}
+
+@keyframes leg-up2{
+  0%, 100% {transform: rotate(-87deg)}
+  33% {transform: rotate(-50deg)}
+  66% {transform: rotate(-45deg)}
+      
+}
+@keyframes leg-down2{
+  0%, 100% {transform: rotate(-90deg)}
+  33% {transform: rotate(-155deg)}
+  66% {transform: rotate(-130deg)}
+}
