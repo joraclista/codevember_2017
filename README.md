@@ -28,6 +28,7 @@ Tasks for codevember 2017
 | **17** | :car: Speed | [Demo Speed](https://codepen.io/alicepopoff/pen/wpyOrq) |
 | **18** | :car: Motors | [Demo Motors](https://codepen.io/alicepopoff/pen/Ozvyxp) |
 | **19** | :ocean: Ocean | [Demo Ocean](https://codepen.io/alicepopoff/pen/JMLpNM) |
+| **20** | :cool: Swag | [Demo Swag](https://codepen.io/alicepopoff/pen/mpKWMO) |
 | **22** | :star: Planet | [Demo Planet](https://codepen.io/alicepopoff/pen/xpjxqQ) |
 | **24** | :heart: Heart | [Demo Heart](https://codepen.io/alicepopoff/pen/RxJrGR) |
 | **26** | :mountain: Mountain | [Demo Mountain](https://codepen.io/alicepopoff/pen/XVVmvd) |
