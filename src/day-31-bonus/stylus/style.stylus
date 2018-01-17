@@ -1,0 +1,347 @@
+$body_bg_color = #ffcfb4
+$main_bg_color = #A9DEF9
+$pink_bg_color = #f9aaa9
+$hair_bg_color_1 = #0074be
+$hair_bg_color_2 = #f48fb1
+$division = 100
+$hedgehog_h = 100
+
+body {
+	background: $main_bg_color
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	margin: 0
+	overflow: hidden
+      
+}
+.grass {
+	position: absolute
+	left: 0
+	right: 0
+	top: "calc(100% - %spx)" % ($division) 
+	bottom: 0
+	background: #D0F4DE
+}
+.hedgehog {
+    position: absolute
+    width: 200px
+    height: ($hedgehog_h)px
+    bottom: ($division)px
+}
+
+.hedgehog-1 {    
+    right: calc(50% + 30px)
+}
+
+.hedgehog-2 {
+    left: calc(50% + 30px)
+}
+.face {
+    position: absolute
+    width: 100px
+    height: 100px
+    background: $body_bg_color
+    z-index: 10
+}
+
+.hedgehog-1 .face {
+    top: 10px
+    right: 0
+    border-radius: 60px 4px
+    transform: rotate(64deg)
+   // clip-path: circle(54px at 76px 34px)
+}
+.hedgehog-2 .face {
+    top: 10px;
+    left: 0;
+    border-radius: 4px 60px;
+    transform: rotate(-61deg);
+    //clip-path: circle(48px at 31px 34px);
+}
+.body {
+    position: absolute
+    top: -18px
+    right: 5px
+    width: 172px
+    height: 131px
+    border-radius: 80%
+    transition: all 2s ease
+    animation: breathe 2s infinite
+}
+
+@keyframes breathe {
+  0%, 100% {transform:none}
+  50% {transform:scale(1.03)}
+}
+@keyframes blink {
+  0%, 40%, 60%, 100% {opacity:1}
+  41%, 50%, 59% {opacity:0}
+}
+@keyframes blink2 {
+  0%, 40%, 50%, 60%, 70%, 100% {opacity:1}
+  41%, 49%, 59%, 61%, 69% {opacity:0}
+}
+.hedgehog-1 .body {    
+    background: $hair_bg_color_1
+}
+.hedgehog-2 .body {    
+    background: $hair_bg_color_2
+}
+.nose {
+    position: absolute
+    background: $pink_bg_color
+    width: 15px
+    height: 17px
+    border-radius: 40%
+    z-index: 50
+}
+
+.hedgehog-1 .nose {
+    
+    top: 66px
+    right: -27px
+}
+.hedgehog-2 .nose {    
+    top: 66px
+    left: -27px
+}
+.eye {
+    position: absolute
+    background: black
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    z-index:50
+    
+    &:after {
+      content: ""
+      position: absolute
+      border-radius: 100%
+      width: 8px
+      height: 8px
+      background: white
+  }
+}
+
+.hedgehog-1 .eye {
+    top: 52px;
+    right: 10px;
+    animation: blink 2s infinite
+    &:after {      
+      top: 3px
+      right: 2px
+  }
+}
+.hedgehog-2 .eye {
+    top: 52px;
+    left: 10px;
+    animation: blink2 2s 1s infinite
+    &:after {      
+      top: 3px
+      left: 2px
+  }
+}
+.smile {
+    background: $pink_bg_color
+    width: 21px
+    height: 11px
+    border-radius: 15px 15px 40px 40px
+    position: absolute;   
+    z-index: 50
+}
+.hedgehog-1 .smile {    
+    top: 87px
+    right: -1px
+    transform: rotate(14deg)
+}
+
+.hedgehog-2 .smile {    
+    top: 87px
+    left: -1px
+    transform: rotate(-14deg)
+}
+
+.hair {    
+    position: absolute
+    width: 90px
+    height: 49px
+    border-radius: 50%
+    
+    z-index: 100
+}
+
+.hedgehog-1 .hair {    
+    border-top: 30px solid $hair_bg_color_1
+    transform-origin: left center
+}
+.hedgehog-2 .hair {    
+    border-top: 30px solid $hair_bg_color_2
+    transform-origin: right center
+}
+
+.hedgehog-1 .hair0 {
+	top: -6px
+	right: -29px
+	transform: rotate(0deg)
+}
+.hedgehog-2 .hair0 {
+	top: -6px
+	left: -29px
+	transform: rotate(0deg)
+}
+.hedgehog-1 .hair1 {
+    top: 9px
+    right: -8px
+    transform: rotate(-63deg)
+}
+.hedgehog-2 .hair1 {
+    top: -4px
+    left: -34px
+    transform: rotate(49deg)
+}
+.hedgehog-1 .hair2 {
+    top: 14px
+    right: -1px
+    transform: rotate(-100deg)
+}
+.hedgehog-2 .hair2 {
+    top: -5px
+    left: -18px
+    transform: rotate(99deg)
+}
+.hedgehog-1 .hair3 {
+    top: 26px
+    right: 26px
+    transform: rotate(-112deg)
+}
+.hedgehog-2 .hair3 {
+    top: -6px
+    left: 19px
+    transform: rotate(127deg)
+}
+.hedgehog-1 .hair4 {
+    top: 50px
+    right: 39px
+    transform: rotate(-128deg)
+}
+.hedgehog-2 .hair4 {
+    top: 30px
+    left: 39px
+    transform: rotate(157deg)
+}
+
+.leg {
+	position: absolute
+	border-radius: 100%
+	background: $body_bg_color
+	//box-shadow: 2px 0 1px #ffcfb4
+	z-index: 100
+	&:after {
+	  content: ""
+	  border-radius: 100%
+	  border-top: 5px dotted #f9aaa9
+	  border-right: 5px dotted #f9aaa9
+	  position: absolute
+	  background-image: radial-gradient(#f9aaa9, #f9aaa9 49%, transparent 50%)
+   }
+}
+.leg1 {
+    width: 39px
+    height: 28px    
+    &:after {
+      width: 40px
+      height: 16px
+   }
+}
+.hedgehog-1 .leg1 {
+    top: 97px
+    right: 50px
+    &:after {
+      top: 9px
+      left: 1px
+   }
+}
+.hedgehog-2 .leg1 {
+    top: 97px
+    left: 50px
+    &:after {
+      top: 9px;
+      left: -1px;
+   }
+}
+.leg2 {
+    width: 35px
+    height: 28px
+    z-index: 40
+    &:after {
+      width: 30px
+      height: 15px
+   }
+}
+
+.hedgehog-1 .leg2 {
+    top: 88px
+    left: 35px
+    &:after {
+      top: 9px
+      left: 5px
+   }
+}
+.hedgehog-2 .leg2 {
+    top: 88px
+    right: 35px
+    &:after {
+      top: 9px
+      left: 0px
+   }
+}
+
+.heart {
+	position: absolute
+	width: 100px
+	height: 100px
+	bottom: 0
+	left: "calc(50% - %spx)" % ($hedgehog_h/2)
+	transform: scale(0.2)
+	opacity: 0
+	&:before, &:after {
+	  position: absolute
+	  content: ""
+	  left: 50px
+	  top: 0
+	  width: 50px
+	  height: 80px
+	  background: #fc2e5a
+	  border-radius: 50px 50px 0 0
+	  transform: rotate(-45deg)
+	  transform-origin: 0 100%
+  }
+  &:after{
+      left: 0
+      transform: rotate(45deg)
+      transform-origin: 100% 100%
+  }
+}
+
+random(min, max) 
+	return floor(math(0, 'random')*(max - min + 1) + min)
+  
+  
+for i in (1..21) 
+	.heart{i} {
+		animation: "heart%s" % (random(1,10)) (random(5, 15))s (random(1,5))s infinite ease
+	}
+	 
+$offset = -500,-300,-200,-100,0,100,200,300,400,500  
+
+for i in (1..10) 
+	@keyframes heart{i} {
+			$k = i - 1
+			0% {opacity:0; transform: scale(0.2)}
+			100% {opacity:5; transform: scale(1) translate(($offset[$k])px, -1000px)}
+}
+
+
