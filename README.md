@@ -4,8 +4,11 @@ Codevember 2017 is a challenge for developers creating a creative sketch using w
 
 [Demos on codepen](https://codepen.io/alicepopoff/pens/public/)
 
-or run locally
+or run locally:
 
+1. [Install slim as described here ](https://www.npmjs.com/package/gulp-slim)
+
+2.  
 ```sh
 > npm install
 > gulp
@@ -32,4 +35,4 @@ Tasks for codevember 2017
 | **22** | :star: Planet | [Demo Planet](https://codepen.io/alicepopoff/pen/xpjxqQ) |
 | **24** | :heart: Heart | [Demo Heart](https://codepen.io/alicepopoff/pen/RxJrGR) |
 | **26** | :mountain: Mountain | [Demo Mountain](https://codepen.io/alicepopoff/pen/XVVmvd) |
-
+| **Bonus Day-31** | :heart: Hedgehogs in Love | [Demo](https://codepen.io/alicepopoff/pen/OzBmoO) |
