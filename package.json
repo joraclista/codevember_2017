@@ -15,11 +15,12 @@
   },
   "devDependencies": {
     "browser-sync": "latest",
+    "del": "latest",
     "gulp": "latest",
     "gulp-clean": "^0.3.1",
+    "gulp-rename": "latest",
+    "gulp-slim": "^0.3.0",
     "gulp-stylus": "latest",
-    "gulp-util": "latest",
-	"gulp-rename": "latest",
-	"del": "latest"
+    "gulp-util": "latest"
   }
 }

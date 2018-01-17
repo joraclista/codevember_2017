@@ -3,10 +3,17 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     browserSync = require('browser-sync'),
 	del = require('del'),
-	rename = require("gulp-rename");
+	rename = require("gulp-rename")
+	slim = require("gulp-slim");
 
 
-
+gulp.task('slim', function(){
+  gulp.src('./src/**/*.slim')
+    .pipe(slim({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./public/'));
+});
 
 gulp.task('styles', function() {
   gulp.src('./src/**/*.stylus')
@@ -46,5 +53,5 @@ gulp.task('echo', function() {
 });
 
 //define cmd line default task
-gulp.task('build', ['clean', 'copy-files', 'styles']);
+gulp.task('build', ['clean', 'copy-files', 'styles', 'slim']);
 gulp.task('default', ['build', 'watch', 'browserSync']);
